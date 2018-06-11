@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>titre</th>
+                        <th>résumé</th>
+                    </tr>
+                    {% for fil in film %}
+                        <tr>
+                            <td>
+                                {{ fil.id }}
+                            </td>
+                            <td>
+                                {{ fil.titre }}
+                            </td>
+                            <td><a href="{{ path('filmlist', {'name':film.titre}) }}">voir</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
